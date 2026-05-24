@@ -1,7 +1,8 @@
 import axios from 'axios'
 import type { Milestone, Checkin, Project, Resource, Stats } from '../types'
 
-const api = axios.create({ baseURL: '/api' })
+const BASE = import.meta.env.VITE_API_URL ?? ''
+const api = axios.create({ baseURL: `${BASE}/api` })
 
 export const getMilestones = () => api.get<Milestone[]>('/milestones').then(r => r.data)
 export const toggleMilestone = (id: number, completed: boolean) =>
