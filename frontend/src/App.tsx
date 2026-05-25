@@ -7,8 +7,9 @@ import ProjectBoard from './components/ProjectBoard'
 import ResourcesList from './components/ResourcesList'
 import CheckinModal from './components/CheckinModal'
 import Sidebar from './components/Sidebar'
+import Calendar from './components/Calendar'
 
-export type View = 'dashboard' | 'milestones' | 'projects' | 'resources'
+export type View = 'dashboard' | 'milestones' | 'projects' | 'resources' | 'calendar'
 
 function App() {
   const [view, setView] = useState<View>('dashboard')
@@ -78,6 +79,9 @@ function App() {
         )}
         {view === 'resources' && (
           <ResourcesList resources={resources} onToggle={handleToggleResource} />
+        )}
+        {view === 'calendar' && (
+          <Calendar milestones={milestones} resources={resources} />
         )}
       </main>
 

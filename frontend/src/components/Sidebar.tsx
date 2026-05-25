@@ -1,4 +1,4 @@
-import { LayoutDashboard, CheckSquare, FolderKanban, BookOpen, ClipboardCheck } from 'lucide-react'
+import { LayoutDashboard, CheckSquare, FolderKanban, BookOpen, ClipboardCheck, CalendarDays } from 'lucide-react'
 import type { View } from '../App'
 import type { Stats } from '../types'
 
@@ -14,6 +14,7 @@ const navItems: { id: View; label: string; icon: React.ReactNode }[] = [
   { id: 'milestones', label: 'Milestones', icon: <CheckSquare size={18} /> },
   { id: 'projects', label: 'Projects', icon: <FolderKanban size={18} /> },
   { id: 'resources', label: 'Resources', icon: <BookOpen size={18} /> },
+  { id: 'calendar', label: 'Calendar', icon: <CalendarDays size={18} /> },
 ]
 
 export default function Sidebar({ view, setView, stats, onCheckin }: Props) {
